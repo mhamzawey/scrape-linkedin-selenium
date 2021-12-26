@@ -40,7 +40,7 @@ class Scraper(object):
             return
 
         self.was_passed_instance = False
-        self.driver = driver(**driver_options)
+        self.driver = driver
         self.scroll_pause = scroll_pause
         self.scroll_increment = scroll_increment
         self.timeout = timeout
