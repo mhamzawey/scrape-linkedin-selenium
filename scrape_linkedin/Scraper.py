@@ -66,13 +66,12 @@ class Scraper(object):
         raise Exception('Must override abstract method scrape')
 
     def login(self, email, password):
-        email_input = self.driver.find_element_by_css_selector(
-            'input.login-email')
-        password_input = self.driver.find_element_by_css_selector(
-            'input.login-password')
-        email_input.send_keys(email)
-        password_input.send_keys(password)
-        password_input.send_keys(Keys.ENTER)
+        self.driver.find_element_by_id('username').send_keys(email)
+        time.sleep(2)
+        self.driver.find_element_by_id('password').send_keys(password)
+        time.sleep(3)
+        self.driver.find_element_by_id('password').send_keys(Keys.RETURN)
+        time.sleep(3)
 
     def get_html(self, url):
         self.load_profile_page(url)
