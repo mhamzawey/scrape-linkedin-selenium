@@ -44,7 +44,7 @@ class Scraper(object):
         self.scroll_pause = scroll_pause
         self.scroll_increment = scroll_increment
         self.timeout = timeout
-        self.driver.get('https://www.linkedin.com')
+        self.driver.get('https://www.linkedin.com/login')
         self.driver.set_window_size(1920, 1080)
 
         if 'LI_EMAIL' in environ and 'LI_PASS' in environ:
